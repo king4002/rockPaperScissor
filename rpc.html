@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper scisoor</title>
+</head>
+<body>
+    <script>
+        
+        function getComputerChoice(rock, paper, scissor){
+           const randomValue = Math.random();
+           if(randomValue< 0.33){
+            return rock;
+           } else if (randomValue < 0.66) {
+            return paper;
+           } else {
+            scissor;
+           }
+        }
+
+        console.log(getComputerChoice("rock" , "paper", "scissor"));
+
+        function getHumanChoice(rock, paper, scissor){
+
+        }
+
+        function getHumanChoice() {
+    const userInput = prompt("Please enter your choice (rock, paper, or scissors):").toLowerCase();
+    
+    if (userInput === "rock" || userInput === "paper" || userInput === "scissors") {
+        return userInput;
+    } else {
+        return "Invalid choice, please enter 'rock', 'paper', or 'scissors'.";
+    }
+}
+
+// Example usage:
+console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+    const human = humanChoice.toLowerCase();
+    const computer = computerChoice.toLowerCase();
+
+    if (human === computer){
+        console.log("it's a tie");
+    } else if (
+        (human === "rock" && computer === "scissors") ||
+        (human === "paper" && computer === "rock") ||
+        (human === "scissors" && computer === "paper")
+    ) {
+        console.log(`You win! ${human.charAt(0).toUpperCase() + human.slice(1)} beats ${computer}.`);
+    } else {
+        console.log(`You lose! ${computer.charAt(0).toUpperCase() + computer.slice(1)} beats ${human}.`);
+    }
+}
+
+    </script>
+</body>
+</html>
