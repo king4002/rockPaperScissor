@@ -8,38 +8,33 @@
 <body>
     <script>
         
-        function getComputerChoice(rock, paper, scissor){
-           const randomValue = Math.random();
-           if(randomValue< 0.33){
-            return rock;
-           } else if (randomValue < 0.66) {
-            return paper;
-           } else {
-            scissor;
-           }
-        }
+        function getComputerChoice(rock, paper, scissor) {
+    const randomValue = Math.random();
+    if (randomValue < 0.33) {
+        return rock;
+    } else if (randomValue < 0.66) {
+        return paper;
+    } else {
+        return scissor;
+    }
+}
 
-        console.log(getComputerChoice("rock" , "paper", "scissor"));
+// Example usage
+console.log(getComputerChoice("rock", "paper", "scissors"));
 
-        function getHumanChoice(rock, paper, scissor){
-
-        }
-
-        function getHumanChoice() {
+function getHumanChoice() {
     const userInput = prompt("Please enter your choice (rock, paper, or scissors):").toLowerCase();
-    
+
     if (userInput === "rock" || userInput === "paper" || userInput === "scissors") {
         return userInput;
     } else {
-        return "Invalid choice, please enter 'rock', 'paper', or 'scissors'.";
+        console.log("Invalid choice, please enter 'rock', 'paper', or 'scissors'.");
+        return getHumanChoice(); // Re-prompt if invalid
     }
 }
 
 // Example usage:
 console.log(getHumanChoice());
-
-let humanScore = 0;
-let computerScore = 0;
 
 function playGame() {
     let humanScore = 0;
@@ -65,19 +60,19 @@ function playGame() {
     }
 
     // Play 5 rounds manually
-    const round1 = playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
+    playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
     console.log(`After Round 1: Human Score: ${humanScore}, Computer Score: ${computerScore}`);
 
-    const round2 = playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
+    playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
     console.log(`After Round 2: Human Score: ${humanScore}, Computer Score: ${computerScore}`);
 
-    const round3 = playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
+    playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
     console.log(`After Round 3: Human Score: ${humanScore}, Computer Score: ${computerScore}`);
 
-    const round4 = playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
+    playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
     console.log(`After Round 4: Human Score: ${humanScore}, Computer Score: ${computerScore}`);
 
-    const round5 = playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
+    playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
     console.log(`After Round 5: Human Score: ${humanScore}, Computer Score: ${computerScore}`);
 
     // Declare the winner
@@ -92,6 +87,7 @@ function playGame() {
 
 // Start the game
 playGame();
+
 
 
     </script>
