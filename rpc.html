@@ -19,7 +19,7 @@
     }
 }
 
-// Example usage
+
 console.log(getComputerChoice("rock", "paper", "scissors"));
 
 function getHumanChoice() {
@@ -31,10 +31,8 @@ function getHumanChoice() {
         console.log("Invalid choice, please enter 'rock', 'paper', or 'scissors'.");
         return getHumanChoice(); // Re-prompt if invalid
     }
-}
+} 
 
-// Example usage:
-console.log(getHumanChoice());
 
 function playGame() {
     let humanScore = 0;
@@ -59,7 +57,7 @@ function playGame() {
         }
     }
 
-    // Play 5 rounds manually
+
     playRound(getHumanChoice(), getComputerChoice("rock", "paper", "scissors"));
     console.log(`After Round 1: Human Score: ${humanScore}, Computer Score: ${computerScore}`);
 
@@ -83,8 +81,7 @@ function playGame() {
     } else {
         console.log("It's a tie game!");
     }
-}
-
+} // int is the best integer is ghe mea
 // Start the game
 playGame();
 
